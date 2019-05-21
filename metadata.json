@@ -1,12 +1,12 @@
 {
-  "name": "torrancew-cron",
-  "version": "0.2.1",
-  "author": "torrancew",
+  "name": "itbane-cron",
+  "version": "0.3",
+  "author": "itbane",
   "license": "Apache-2.0",
   "summary": "A module to manage cron jobs via /etc/cron.d",
-  "source": "https://github.com/torrancew/puppet-cron",
-  "project_page": "https://forge.puppetlabs.com/torrancew/cron",
-  "issues_url": "https://github.com/torrancew/puppet-cron/issues",
+  "source": "https://github.com/itbane/puppet-cron",
+  "project_page": "https://forge.puppetlabs.com/itbane/cron",
+  "issues_url": "https://github.com/itbane/puppet-cron/issues",
   "tags": ["cron"],
   "operatingsystem_support": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "operatingsystem": "Debian",
-      "operatingsystemrelease": [ "8.0", "7.0", "6.0" ]
+      "operatingsystemrelease": [ "9.0", "8.0", "7.0", "6.0" ]
     },
     {
       "operatingsystem": "Ubuntu",
@@ -32,7 +32,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 2.6.0 < 5.0.0"
+      "version_requirement": ">= 4.0 < 6.0.0"
     }
   ],
   "data_provider": "none"

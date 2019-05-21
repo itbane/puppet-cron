@@ -15,6 +15,7 @@ It defines the following types:
   * cron::daily   - wrapper for daily jobs
   * cron::weekly  - wrapper for weekly jobs
   * cron::monthly - wrapper for monthly jobs
+  * cron::rebooty - wrapper for one-shot jobs at reboot
 
 ## Installation:
 
@@ -39,6 +40,7 @@ It allows specifying the following parameters:
   * date
   * month
   * weekday
+  * reboot
   * user
   * command
   * environment
@@ -153,8 +155,28 @@ Example:
         command => 'mysqldump -u root mydb';
     }
 
+### cron::reboot
+
+cron::reboot creates jobs in /etc/cron.d that run at boot time.
+It allows specifying the following parameters:
+
+  * ensure
+  * user
+  * command
+  * environment
+
+Example:
+  This would run the command "mysqldump -u root mydb" as root at reboot, like the above generic example:
+
+    cron::reboot{
+      'mysqlbackup_reboot':
+        user    => 'root',
+        command => 'mysqldump -u root mydb';
+    }
+
 ## Contributors:
 
+  * Tray (@torrancew)                   - Owner of upstream, which has sadly gone stale
   * Kevin Goess (@kgoess)               - Environment variable support + fixes
   * Andy Shinn (@andyshinn)             - RedHat derivatives package name fix 
   * Chris Weyl (@RsrchBoy)              - Fixed Puppet 3.2 deprecation warnings
@@ -164,6 +186,4 @@ Example:
 
 ## TODO:
 
-  * <del>Add PuppetDoc markup to manifests</del>
-  * <del>Add a Modulefile, upload to the Puppet Forge</del>
-
+  * Add module-layer hiera data
