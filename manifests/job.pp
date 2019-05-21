@@ -15,6 +15,8 @@
 #     Defaults to '*'.
 #   weekday - The day of the week the cron job should fire on. Can be any valid cron weekday value.
 #     Defaults to '*'.
+#   reboot - Whether the command should be executed at boot time. Overrides all the date values.
+#     Defaults to false.
 #   environment - An array of environment variable settings.
 #     Defaults to an empty set ([]).
 #   mode - The mode to set on the created job file
@@ -37,7 +39,7 @@
 #   }
 define cron::job(
   $command = undef, $minute = '*', $hour = '*', $date = '*', $month = '*', $weekday = '*',
-  $environment = [], $user = 'root', $mode = '0644', $ensure = 'present'
+  $reboot = false, $environment = [], $user = 'root', $mode = '0644', $ensure = 'present'
 ) {
 
   case $ensure {
